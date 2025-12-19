@@ -1,0 +1,334 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shree Bajarang Precision | Premium Wipers</title>
+  <meta name="description" content="Shree Bajarang Precision manufactures premium automotive wiper blades. Made in India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: #111723;
+      --muted: #97a3b6;
+      --primary: #41c9ff; /* aqua accent */
+      --accent: #00d084;  /* green accent */
+      --ring: rgba(65,201,255,.35);
+      --gradient: radial-gradient(1200px 600px at 80% -10%, rgba(65,201,255,.15), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 10%, rgba(0,208,132,.14), transparent 60%),
+                  linear-gradient(180deg, #0b0f14 0%, #0b0f14 100%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:#e9eef7; background:var(--gradient);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background:rgba(11,15,20,.65); border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg, var(--primary), var(--accent)); display:grid; place-items:center; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .logo svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+    .brand h1{font-size:18px; margin:0; letter-spacing:.2px}
+    .navlinks{display:flex; gap:20px; align-items:center}
+    .navlinks a{opacity:.9; font-weight:500}
+    .navlinks a:hover{opacity:1}
+    .btn{display:inline-grid; place-items:center; padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid rgba(255,255,255,.1); transition:.2s transform, .2s background, .2s box-shadow}
+    .btn.primary{background:linear-gradient(135deg, rgba(65,201,255,.15), rgba(0,208,132,.15)); box-shadow:0 0 0 0 rgba(65,201,255,0)}
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(65,201,255,.25), rgba(0,208,132,.25)); box-shadow:0 10px 30px var(--ring); transform:translateY(-1px)}
+
+    /* hero */
+    .hero{position:relative; overflow:hidden}
+    .hero-inner{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center; padding:64px 0 36px}
+    .eyebrow{color:var(--muted); font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:12px}
+    .hero h2{font-size:44px; line-height:1.1; margin:10px 0 16px}
+    .hero p{color:#cdd7e6; margin:0 0 20px}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 26px}
+    .badge{border:1px dashed rgba(255,255,255,.18); border-radius:999px; padding:8px 12px; font-size:12px; color:#d9e4f3; background:rgba(255,255,255,.04)}
+    .hero-cta{display:flex; gap:12px; align-items:center}
+    .hero-visual{position:relative; aspect-ratio:4/3; border-radius:18px; background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 40px 80px rgba(0,0,0,.45); overflow:hidden}
+    .hero-visual .glow{position:absolute; inset:-40%; background:radial-gradient(400px 200px at 70% 20%, rgba(65,201,255,.25), transparent 60%), radial-gradient(400px 200px at 20% 80%, rgba(0,208,132,.2), transparent 60%)}
+    .hero-visual svg{position:absolute; inset:0; width:100%; height:100%; opacity:.9}
+
+    /* section */
+    section{padding:56px 0}
+    .section-head{margin-bottom:20px}
+    h3{font-size:28px; margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    /* cards grid */
+    .grid{display:grid; gap:18px}
+    @media (min-width: 720px){ .grid.cols-3{grid-template-columns:repeat(3, 1fr)} }
+    @media (max-width: 960px){ .hero-inner{grid-template-columns:1fr; padding-top:36px} }
+
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .card h4{margin:0 0 8px}
+    .chip{display:inline-block; font-size:11px; padding:6px 10px; border-radius:999px; background:rgba(65,201,255,.12); border:1px solid rgba(65,201,255,.25); margin-right:6px}
+
+    /* product row */
+    .product{display:flex; gap:16px; align-items:flex-start}
+    .product img{width:84px; height:84px; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,.08)}
+    .product h5{margin:0 0 6px}
+
+    /* feature list */
+    .features{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px}
+    @media (max-width: 640px){ .features{grid-template-columns:1fr} }
+    .feature{display:flex; gap:10px; align-items:flex-start}
+
+    /* CTA band */
+    .cta-band{background:linear-gradient(135deg, rgba(65,201,255,.08), rgba(0,208,132,.08)); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:18px; display:flex; gap:16px; align-items:center; justify-content:space-between}
+
+    /* table */
+    table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.08)}
+    th, td{padding:12px 14px; text-align:left}
+    thead{background:rgba(255,255,255,.04)}
+    tbody tr{border-top:1px solid rgba(255,255,255,.06)}
+
+    /* footer */
+    footer{border-top:1px solid rgba(255,255,255,.08); padding:30px 0 50px; color:#b8c3d6}
+
+    /* utilities */
+    .row{display:flex; gap:16px; flex-wrap:wrap}
+    .grow{flex:1}
+    .center{display:grid; place-items:center}
+    .hide-mobile{display:block}
+    .show-mobile{display:none}
+    @media (max-width: 720px){.hide-mobile{display:none}.show-mobile{display:block}}
+    .ring{outline:2px solid transparent; outline-offset:2px}
+    .ring:focus{outline-color:var(--ring)}
+    input, textarea, select{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:#e9eef7}
+    label{font-size:13px; color:#c5d0e0}
+    .sep{height:1px; background:rgba(255,255,255,.08); margin:20px 0}
+    .note{font-size:12px; color:#9fb0c6}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <h1>Shree Bajarang Precision</h1>
+      </a>
+      <nav class="navlinks">
+        <a href="#products">Products</a>
+        <a href="#whyus">Why Us</a>
+        <a href="#certs">Certifications</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact" class="btn primary">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Made in India</div>
+        <h2>Premium Wipers for Every Surface</h2>
+        <p>
+          We design and manufacture long‑life <strong>automotive wiper blades</strong> ,  with high‑grade rubber compounds for streak‑free performance in Indian conditions.
+        </p>
+        <div class="badges">
+          <span class="badge">Pan‑India Shipping</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn primary">Get a Clearo!</a>
+          <a href="https://wa.me/7434014997" class="btn" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="glow"></div>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <defs>
+    <!-- Blue water gradient -->
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0077ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00c3ff" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Glossy highlight -->
+    <linearGradient id="shine" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background box -->
+  <rect x="0" y="0" width="600" height="450" rx="40" fill="url(#g1)"/>
+
+  <!-- Shiny overlay -->
+  <rect x="0" y="0" width="600" height="200" rx="40" fill="url(#shine)"/>
+
+  <!-- Wiper swoosh arc -->
+  <path d="M 120 300 Q 300 150 480 300" 
+        stroke="white" 
+        stroke-width="25" 
+        stroke-linecap="round" 
+        fill="none"/>
+
+  <!-- Handle of wiper -->
+  <line x1="300" y1="280" x2="300" y2="400" 
+        stroke="#e0f7ff" 
+        stroke-width="20" 
+        stroke-linecap="round"/>
+</svg>
+
+      </div>
+    </div>
+  </main>
+
+  <section id="products">
+    <div class="container">
+      <div class="section-head">
+        <h3>Product Range</h3>
+        <p class="muted">Built for durability, engineered for clarity.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="product">
+            <img src="productimage!!" alt="enterproductlink"/>
+            <div>
+              <h4>name</h4>
+              <p class="muted">description</p>
+              <div>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="product">
+            <img src="productimage!" alt="enterproductlink"/>
+            <div>
+              <h4>name</h4>
+              <p class="muted">about.</p>
+              <div>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="product">
+            <img src="productimage!" alt="enterproductlink"/>
+            <div>
+              <h4>name</h4>
+              <p class="muted">about.</p>
+              <div>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+                <span class="chip">about</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="grid cols-3">
+        <div class="card">
+          <h4>Materials</h4>
+          <ul class="muted">
+            <li>materials used in products</li>
+            <li>useability?</li>
+            <li>durability?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Applications</h4>
+          <ul class="muted">
+            <li>Original Equipment Manufacturer and seller name</li>
+            <li>Food, pharma & cleanroom maintenance</li>
+            <li>Housekeeping & facility management</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Packaging</h4>
+          <ul class="muted">
+            <li>Retail blister & box packs</li>
+            <li>White‑label / private label</li>
+            <li>Export‑ready cartons</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="whyus">
+    <div class="container">
+      <div class="section-head">
+        <h3>Why Choose Us</h3>
+        <p class="muted">Consistency, clarity, and customer‑first service.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l4 4 12-12" stroke="#41c9ff" stroke-width="2" stroke-linecap="round"/></svg>
+          <div>
+            <strong>Streak‑Free Performance</strong>
+            <div class="muted">Optimized blade geometry & uniform pressure distribution.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#41c9ff" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#41c9ff" stroke-width="2" stroke-linecap="round"/></svg>
+          <div>
+            <strong>Long Service Life</strong>
+            <div class="muted">Premium compounds resist heat, dust, and monsoon use.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h12M4 17h8" stroke="#41c9ff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="feature">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 7h7l-5.5 4.1L18 21l-6-3.8L6 21l1.5-7.9L2 9h7l3-7z" stroke="#41c9ff" stroke-width="2"/></svg>
+          <div>
+            <strong>Quality Control</strong>
+            <div class="muted">Batch testing for hardness, edge finish & sweep uniformity.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <div class="container">
+      <div class="section-head">
+        <h3>Certifications & Standards</h3>
+        <p class="muted">Compliance that inspires confidence.</p>
+      </div>
+
+      <div class="grid cols-3">
+
+        <div class="card center">
+        </div>
+        <div class="card center">
+          <div>
+            <h4>Make in India</h4>
+            <p class="muted">Local sourcing and manufacturing footprint.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <h4>Technical Specs (sample)</h4>
+      <table>
+        <tbody>
+          <tr>
+            <td>Material</td>
+            <td>materials?</td>
+            <td>materials?</td>
+            <td>materials?</td>
+          </tr>
+          <tr>
+            <td>Operating Temp</td>
+            <td>
